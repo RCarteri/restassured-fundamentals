@@ -3,8 +3,9 @@ package com.psrestassured.m4headers;
 import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
-public class _PeekAndPrintDemo {
+public class _0PeekAndPrintDemo {
     public static final String BASE_URL = "http://api.github.com";
+
     @Test
     public void peek(){
         RestAssured.get(BASE_URL)
