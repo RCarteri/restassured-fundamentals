@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import static io.restassured.http.ContentType.JSON;
@@ -48,6 +49,17 @@ public class _2ValidatableResponseDemo {
                 .header("x-ratelimit-limit", Integer::parseInt, equalTo(60))
                 .header("date", date -> parse(date, RFC_1123_DATE_TIME), comparesEqualTo(now()))
                 .header("x-ratelimit-limit", response -> greaterThan(response.header("x-ratelimit-remaining")));
+    }
+
+    @Test
+    public void usingMapsToTestHeaders() {
+        Map<String, String> expectHeaders = Map.of("content-encoding", "gzip", "access-control-allow-origin", "*");
+        RestAssured.get(BASE_URL)
+                .then()
+                .headers("content-encoding", "gzip",
+                        "access-control-allow-origin", "*",
+                        "Cache-Control", containsString("public"))
+                .headers(expectHeaders);
     }
 
 
