@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 import org.testng.annotations.Test;
 
 public class _0PeekAndPrintDemo {
-    public static final String BASE_URL = "http://api.github.com";
+    public static final String BASE_URL = "https://api.github.com";
 
     @Test
     public void peek(){

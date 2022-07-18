@@ -4,17 +4,16 @@ import io.restassured.RestAssured;
 import io.restassured.http.Header;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MINUTES;
-import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class _1BasicResponseDemo {
-    public static final String BASE_URL = "http://api.github.com";
+    public static final String BASE_URL = "https://api.github.com";
 
     @Test
     public void convinienceMethods(){

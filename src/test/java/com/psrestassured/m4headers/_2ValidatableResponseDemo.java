@@ -1,13 +1,9 @@
 package com.psrestassured.m4headers;
 
 import io.restassured.RestAssured;
-import org.hamcrest.number.OrderingComparison;
 import org.testng.annotations.Test;
 
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 
 import static io.restassured.http.ContentType.JSON;
 import static java.time.LocalDate.now;
@@ -17,7 +13,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import static org.hamcrest.Matchers.*;
 
 public class _2ValidatableResponseDemo {
-    public static final String BASE_URL = "http://api.github.com";
+    public static final String BASE_URL = "https://api.github.com";
 
     @Test
     public void basicValidatableExample(){

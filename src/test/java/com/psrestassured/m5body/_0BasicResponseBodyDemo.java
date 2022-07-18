@@ -12,7 +12,7 @@ import java.util.Map;
 import static org.testng.Assert.*;
 
 public class _0BasicResponseBodyDemo {
-    public static final String BASE_URL = "http://api.github.com/rate_limit";
+    public static final String BASE_URL = "https://api.github.com/rate_limit";
 
     @Test
     public void jsonPathReturnsMap(){
