@@ -30,4 +30,15 @@ public class OtherMethodsDemo {
                 .then()
                     .statusCode(200);
     }
+
+    @Test(description = "Delete a repo")
+    public void deleteTest(){
+        RestAssured
+                .given()
+                    .header("Authorization", "token " + TOKEN)
+                .when()
+                    .delete("https://api.github.com/repos/RCarteri/deleteme-patched")
+                .then()
+                    .statusCode(204);
+    }
 }
