@@ -18,4 +18,16 @@ public class OtherMethodsDemo {
                 .then()
                     .statusCode(201);
     }
+
+    @Test(description = "Update a repo")
+    public void patchTest(){
+        RestAssured
+                .given()
+                    .header("Authorization", "token " + TOKEN)
+                    .body("{\"name\": \"deleteme-patched\"}")
+                .when()
+                    .post("https://api.github.com/repos/RCarteri/deleteme")
+                .then()
+                    .statusCode(200);
+    }
 }
